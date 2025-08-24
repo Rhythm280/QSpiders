@@ -1,0 +1,377 @@
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 5%;
+    background: linear-gradient(135deg, #fff6ed 0%, #fff 100%);
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Text Area */
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+
+.hero-text h1 span {
+    color: #f97316;
+    /* orange */
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+/* Button */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(to right, #f97316, #ff4d00);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    opacity: 0.9;
+}
+
+/* Image Area */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    align-items: center;
+}
+
+nav .navbar-logo {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .navbar-logo img {
+    height: 90%;
+    width: 90%;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .navbar-links li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+nav .btn {
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .btn a {
+    padding: 10px 15px;
+    background-color: #f97316;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+    border: 2px solid white;
+}
+
+.footer {
+    background-color: #02244d;
+    /* navy blue */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer .social-icons {
+    margin-bottom: 8px;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #ffcc00;
+    /* gold hover effect */
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Center the form on the page */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
+    background-color: #fdfdfd;
+    /* Light off-white, QSpiders-friendly */
+}
+
+/* The login card styles */
+.login {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 360px;
+}
+
+/* Form labels */
+.login label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Input fields */
+.login input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Input focus style */
+.login input:focus {
+    border-color: #ff6600;
+    /* QSpiders orange accent */
+}
+
+/* Orange button with hover effect */
+.login button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6600;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Button hover state */
+.login button:hover {
+    background-color: #e65c00;
+}
+
+.pill-selector {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    width: fit-content;
+}
+
+.pill-selector input[type="radio"] {
+    display: none;
+    /* hide default radio */
+}
+
+.pill-selector label {
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background: #f9f9f9;
+    color: #333;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.pill-selector input[type="radio"]:checked+label {
+    background: #ff6600;
+    color: #fff;
+    border-color: #ff6600;
+}
+
+.courses {
+    padding: 20px;
+    width: 100%;
+    height: 62rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* border: 1px solid; */
+}
+
+.courses .course {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* border: 1px solid; */
+}
+
+.courses .course .courseList {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.courses .course .courseList button {
+    padding: 20px 15px;
+    background-color: whitesmoke;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: x-large;
+}
+
+.courses .course .courseList button:hover {
+    background-color: #e65c00;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.courses .course .courseFrames {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 20px;
+}
+
+.courses .course .courseFrames .courseCard {
+    border: 1px solid;
+    width: 20%;
+}
+
+.addCourse {
+    height: 84vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addCourse form {
+    height: 50%;
+    width: 40%;
+    border: 1px solid;
+}
+
+.allcourses {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    padding: 20px 30px;
+}
+
+.allcourses .card {
+    padding: 10px;
+    height: 310px;
+    width: 21%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.allcourses .card .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.allcourses .card .btn button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #f97316;
+    border-radius: 10px;
+}

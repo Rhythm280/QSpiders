@@ -1,0 +1,195 @@
+{
+    "course": [
+        {
+            "id": 1,
+            "title": "React for Beginners",
+            "instructor": "John Doe",
+            "price": 49.99,
+            "duration": "6 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Software Development"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Advanced Java",
+            "instructor": "Jane Smith",
+            "price": 59.99,
+            "duration": "8 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Software Development"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Python Data Science",
+            "instructor": "Alice Johnson",
+            "price": 79.99,
+            "duration": "10 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Data Science & Analytics"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Machine Learning A-Z",
+            "instructor": "Bob Lee",
+            "price": 99.99,
+            "duration": "12 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "AI / ML"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Full Stack Web Development",
+            "instructor": "Chris Evans",
+            "price": 149.99,
+            "duration": "14 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Software Development"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "UI/UX Design Fundamentals",
+            "instructor": "Sophia Carter",
+            "price": 39.99,
+            "duration": "5 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Aptitude & Soft skills"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Cloud Computing with AWS",
+            "instructor": "Michael Brown",
+            "price": 89.99,
+            "duration": "8 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Cloud Computing"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "C++ Programming Basics",
+            "instructor": "Daniel Wilson",
+            "price": 29.99,
+            "duration": "4 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Software Development"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Cybersecurity Essentials",
+            "instructor": "Olivia Taylor",
+            "price": 69.99,
+            "duration": "7 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Software Testing",
+                "Banking"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Database Design & SQL",
+            "instructor": "Ethan Clark",
+            "price": 59.99,
+            "duration": "6 weeks",
+            "rating": 4.8,
+            "category": [
+                "Popular Course",
+                "Data Engineer",
+                "Software Architecture"
+            ]
+        }
+    ],
+    "cart": [
+        {
+            "id": 1,
+            "courseId": 3,
+            "quantity": 1
+        },
+        {
+            "id": 2,
+            "courseId": 7,
+            "quantity": 1
+        },
+        {
+            "id": 3,
+            "courseId": 1,
+            "quantity": 2
+        }
+    ],
+    "credintials": [
+        {
+            "username": "user1",
+            "email": "user1@example.com",
+            "password": "pass123"
+        },
+        {
+            "username": "user2",
+            "email": "user2@example.com",
+            "password": "pass456"
+        },
+        {
+            "username": "user3",
+            "email": "user3@example.com",
+            "password": "pass789"
+        },
+        {
+            "username": "user4",
+            "email": "user4@example.com",
+            "password": "pass101"
+        },
+        {
+            "username": "user5",
+            "email": "user5@example.com",
+            "password": "pass102"
+        },
+        {
+            "username": "user6",
+            "email": "user6@example.com",
+            "password": "pass103"
+        },
+        {
+            "username": "user7",
+            "email": "user7@example.com",
+            "password": "pass104"
+        },
+        {
+            "username": "user8",
+            "email": "user8@example.com",
+            "password": "pass105"
+        },
+        {
+            "username": "user9",
+            "email": "user9@example.com",
+            "password": "pass106"
+        },
+        {
+            "username": "user10",
+            "email": "user10@example.com",
+            "password": "pass107"
+        }
+    ]
+}

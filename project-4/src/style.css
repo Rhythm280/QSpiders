@@ -1,0 +1,369 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #111;
+    color: whitesmoke;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: whitesmoke;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: whitesmoke;
+}
+
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+    color: #00bfff;
+}
+
+nav input[type="search"] {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #f1f1f1;
+    outline: none;
+    font-size: 0.95rem;
+    transition: box-shadow 0.3s ease;
+}
+
+nav input[type="search"]:focus {
+    box-shadow: 0 0 5px #00bfff;
+}
+
+nav .btn {
+    padding: 8px 14px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+nav .btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.LogIn,
+.SignUp {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.LogIn .login-section,
+.SignUp .signup-section {
+    width: 400px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: whitesmoke;
+}
+
+.LogIn .login-section h1,
+.SignUp .signup-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.LogIn .login-section div,
+.SignUp .signup-section div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.LogIn .login-section div input,
+.SignUp .signup-section div input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.LogIn .login-section div input:focus,
+.SignUp .signup-section div input:focus {
+    border: 1px solid #00bfff;
+}
+
+.LogIn .login-section .btn,
+.SignUp .signup-section .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.LogIn .login-section .btn:hover,
+.SignUp .signup-section .btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.LogIn .login-section p button,
+.SignUp .signup-section p button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #00bfff;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    padding-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.LogIn .login-section p button:hover,
+.SignUp .signup-section p button:hover {
+    color: #0090ff;
+}
+
+.update-user-container {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.357);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.update-user-container form {
+    width: 400px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: whitesmoke;
+}
+
+.update-user-container form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.update-user-container form div input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.update-user-container form div input:focus {
+    border: 1px solid #00bfff;
+}
+
+.update-user-container form .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.update-user-container form .btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.update-product-container {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.357);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.update-product-container form {
+    width: 400px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: whitesmoke;
+}
+
+.update-product-container form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.update-product-container input,
+.update-product-container textarea,
+.update-product-container select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.update-product-container input:focus,
+.update-product-container textarea:focus,
+.update-product-container select:focus {
+    border: 1px solid #00bfff;
+}
+
+.update-product-container .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.update-product-container .btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.home {
+    height: 400px;
+    width: 400px;
+    border: 1px solid;
+    background-color: red;
+}
+
+.homePage {
+    height: 400px;
+    width: 400px;
+    background-color: gray;
+    border: 5px solid;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .form {
+    width: 25%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+section .form div {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+section .form div input {
+    width: 190px;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 10px;
+}

@@ -1,0 +1,337 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.NavBar {
+    position: sticky;
+    top: 0;
+    height: 8vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.NavBar div {
+    margin-left: 20px;
+    font-size: 2rem;
+}
+
+.NavBar ul {
+    font-size: larger;
+    font-weight: 600;
+    width: 50%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.NavBar ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.NavBar ul li:hover {
+    color: whitesmoke;
+    transform: scale(1.1);
+    background-color: rgb(107, 107, 107);
+}
+
+.NavBar button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.NavBar button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.HomePage {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(195, 195, 195);
+    padding: 20px;
+}
+
+.HomePage .card {
+    width: 300px;
+    height: 460px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.HomePage .card img {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 60%;
+    max-height: 60%;
+}
+
+.HomePage .card .btn {
+    margin: 10px;
+}
+
+.HomePage .card .btn button {
+    padding: 5px 10px;
+    margin: 0 10px;
+    border: none;
+}
+
+.cart {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.487);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    z-index: 10;
+}
+
+.cart .cartContainer {
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    z-index: 1000;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: top;
+    align-items: center;
+}
+
+.cart .cartContainer .cartItem {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart .cartContainer .cartItem img {
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50%; */
+    object-fit: cover;
+}
+
+.cart .cartContainer .cartItem div {
+    width: 78%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LogIn {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.487);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LogIn .login-section {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.LogIn .login-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.LogIn .login-section div {
+    width: 80%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.LogIn .login-section div input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.LogIn .login-section .btn {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.LogIn .login-section p button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.SignUp {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.487);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignUp .signup-section {
+    width: 400px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.SignUp .signup-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.SignUp .signup-section div {
+    width: 80%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.SignUp .signup-section div input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.SignUp .signup-section .btn {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.SignUp .signup-section p button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.cart .cartContainer .cartItem .remove {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart .cartContainer .cartItem .quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart .cartContainer .cartItem .quantity button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart .cartContainer .cartItem .quantity p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    border: 1px solid black;
+    background-color: #ccc;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.cart .buy-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.cart .buy-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid black;
+}

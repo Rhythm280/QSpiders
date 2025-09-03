@@ -14,6 +14,7 @@ import ContactUs from './../pages/ContactUs';
 import AddSyllabus from '../pages/AddSyllabus';
 import AddTrainer from '../pages/AddTrainer';
 import AddCourses from '../pages/AddCourses';
+import Cart from '../components/Cart';
 
 const routing = createBrowserRouter([
     {
@@ -21,63 +22,29 @@ const routing = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                path: "/",
+                index: true,
                 element: <LandingPage />
             },
             {
                 path: "/home",
                 element: <HomePage />,
                 children: [
-                    {
-                        path: "/home/allcourses",
-                        element: <AllCources />
-                    },
-                    {
-                        path: "/home/offlinecourses",
-                        element: <OfflineCourse />
-                    },
-                    {
-                        path: "/home/onlinecourses",
-                        element: <OnlineCourse />
-                    },
-                    {
-                        path: "/home/corporatetraining",
-                        element: <CorporateTraining />
-                    },
-                    {
-                        path: "/home/hirefromus",
-                        element: <HireFromUs />
-                    },
-                    {
-                        path: "/home/placement",
-                        element: <Placement />
-                    },
-                    {
-                        path: "/home/contact",
-                        element: <ContactUs />
-                    },
-                    {
-                        path: "/home/addcourse",
-                        element: <AddCourses />
-                    },
-                    {
-                        path: "/home/addsyllabus",
-                        element: <AddSyllabus />
-                    },
-                    {
-                        path: "/home/addtrainer",
-                        element: <AddTrainer />
-                    }
+                    { index: true, element: <AllCources /> },
+                    { path: "/home/allcourses", element: <AllCources /> },
+                    { path: "/home/offlinecourses", element: <OfflineCourse /> },
+                    { path: "/home/onlinecourses", element: <OnlineCourse /> },
+                    { path: "/home/corporatetraining", element: <CorporateTraining /> },
+                    { path: "/home/hirefromus", element: <HireFromUs /> },
+                    { path: "/home/placement", element: <Placement /> },
+                    { path: "/home/contact", element: <ContactUs /> },
+                    { path: "/home/addcourse", element: <AddCourses /> },
+                    { path: "/home/addsyllabus", element: <AddSyllabus /> },
+                    { path: "/home/addtrainer", element: <AddTrainer /> }
                 ]
             },
-            {
-                path: "/login",
-                element: <Login />
-            },
-            {
-                path: "/signup",
-                element: <Signup />
-            }
+            { path: "/cart", element: <Cart /> },
+            { path: "/login", element: <Login /> },
+            { path: "/signup", element: <Signup /> }
         ]
     }
 ])

@@ -1,4 +1,25 @@
 /* Base */
+:root {
+    --bg: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --brand: #f97316;
+    --brand-strong: #ff4d00;
+    --surface: #f9fafb;
+    --border: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --brand: #fb923c;
+        --brand-strong: #f97316;
+        --surface: #0f172a;
+        --border: #1f2937;
+    }
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +28,10 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #fff;
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-section {
@@ -16,7 +39,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 3rem 5%;
-    background: linear-gradient(135deg, #fff6ed 0%, #fff 100%);
+    background: linear-gradient(135deg, #fff6ed 0%, var(--bg) 100%);
     gap: 2rem;
     flex-wrap: wrap;
 }
@@ -30,18 +53,15 @@ body {
 .hero-text h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: var(--text);
     line-height: 1.2;
 }
 
-.hero-text h1 span {
-    color: #f97316;
-    /* orange */
-}
+.hero-text h1 span { color: var(--brand); }
 
 .hero-text p {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--muted);
     margin: 1.5rem 0;
     line-height: 1.6;
 }
@@ -50,17 +70,17 @@ body {
 .cta-btn {
     display: inline-block;
     padding: 12px 24px;
-    background: linear-gradient(to right, #f97316, #ff4d00);
+    background: linear-gradient(to right, var(--brand), var(--brand-strong));
     color: #fff;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 10px;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: transform 150ms ease, opacity 150ms ease;
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.25);
 }
 
-.cta-btn:hover {
-    opacity: 0.9;
-}
+.cta-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+.cta-btn:active { transform: translateY(0); opacity: 0.88; }
 
 /* Image Area */
 .hero-image {
@@ -87,13 +107,18 @@ body {
 }
 
 nav {
-    height: 80px;
+    height: 72px;
     width: 100%;
     display: flex;
-    background-color: whitesmoke;
+    background-color: var(--surface);
     justify-content: space-between;
     padding: 0 20px 0 20px;
     align-items: center;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(120%) blur(6px);
 }
 
 nav .navbar-logo {
@@ -118,7 +143,7 @@ nav ul {
 }
 
 nav .navbar-links li a {
-    color: black;
+    color: var(--text);
     text-decoration: none;
     font-weight: bold;
     font-size: 17px;
@@ -131,14 +156,16 @@ nav .btn {
     align-items: center;
 }
 
-nav .btn a {
-    padding: 10px 15px;
-    background-color: #f97316;
+nav .btn a, nav .btn button {
+    padding: 10px 16px;
+    background-color: var(--brand);
     border-radius: 10px;
-    color: black;
+    color: #0b1220;
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid #fff;
+    cursor: pointer;
 }
+nav .btn button { border: 0; }
 
 .footer {
     background-color: #02244d;
@@ -213,10 +240,7 @@ nav .btn a {
 }
 
 /* Input focus style */
-.login input:focus {
-    border-color: #ff6600;
-    /* QSpiders orange accent */
-}
+.login input:focus { border-color: var(--brand); }
 
 /* Orange button with hover effect */
 .login button {
@@ -273,7 +297,7 @@ nav .btn a {
 .courses {
     padding: 20px;
     width: 100%;
-    height: 62rem;
+    min-height: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,7 +337,7 @@ nav .btn a {
 
 .courses .course .courseFrames {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -322,8 +346,12 @@ nav .btn a {
 }
 
 .courses .course .courseFrames .courseCard {
-    border: 1px solid;
+    border: 1px solid var(--border);
+    background: var(--bg);
     width: 20%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(2, 36, 77, 0.06);
+    padding: 14px;
 }
 
 .addCourse {
@@ -342,7 +370,7 @@ nav .btn a {
 
 .allcourses {
     width: 100%;
-    height: 100vh;
+    min-height: 20rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -351,15 +379,42 @@ nav .btn a {
 }
 
 .allcourses .card {
-    padding: 10px;
-    height: 310px;
+    padding: 14px;
+    min-height: 310px;
     width: 21%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: start;
-    border: 1px solid;
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    box-shadow: 0 4px 20px rgba(2, 36, 77, 0.06);
+}
+
+/* Responsive refinements for layout/cards/navbar */
+@media (max-width: 1024px) {
+    .courses .course .courseFrames .courseCard { width: 30%; }
+    .allcourses .card { width: 30%; }
+    nav ul { width: 60%; }
+}
+
+@media (max-width: 768px) {
+    .courses .course { flex-direction: column; }
+    .courses .course .courseList { width: 100%; }
+    .courses .course .courseFrames { justify-content: center; }
+    .courses .course .courseFrames .courseCard { width: 45%; }
+    .allcourses { justify-content: center; }
+    .allcourses .card { width: 45%; }
+    nav { flex-wrap: wrap; height: auto; padding: 10px 16px; }
+    nav ul { width: 100%; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0; }
+    nav .btn { width: auto; gap: 8px; }
+}
+
+@media (max-width: 480px) {
+    .courses .course .courseFrames .courseCard { width: 100%; }
+    .allcourses .card { width: 100%; }
+    .cta-btn { width: 100%; text-align: center; }
 }
 
 .allcourses .card .btn {
@@ -370,8 +425,9 @@ nav .btn a {
 }
 
 .allcourses .card .btn button {
-    padding: 5px 10px;
+    padding: 8px 12px;
     border: none;
-    background-color: #f97316;
+    background-color: var(--brand);
     border-radius: 10px;
+    color: #0b1220;
 }

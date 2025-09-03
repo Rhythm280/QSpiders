@@ -1,4 +1,4 @@
-import axios from 'axios/unsafe/axios.js';
+import axios from 'axios';
 import React, { useState } from 'react'
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
@@ -15,15 +15,19 @@ function Signup() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    console.log(formData)
     const signup = async (e) => {
-        e.preventDefault();
+        try {
+            e.preventDefault();
         const response = await axios.post("https://backend-8b0tk9i1w-deepak-kumars-projects-e6b882e9.vercel.app/api/auth/signup", formData)
-        console.log(response)
-        if(response.status == 201) {
-            toast.success("account created successfully")
+        if(response.status === 201) {
+            toast.success("Account created successfully")
             setTimeout(() => {
                 navigate(-1)
             }, 1000)
+        }
+        } catch (error) {
+            toast.error(error?.response?.data?.message || 'Signup failed')
         }
     }
 

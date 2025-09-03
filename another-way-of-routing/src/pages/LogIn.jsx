@@ -1,20 +1,30 @@
-import axios from 'axios/unsafe/axios.js';
-import React, { useState } from 'react'
-import toast from 'react-hot-toast';
+import axios from 'axios';
+import React, { useContext, useState } from 'react'
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { GlobalVar } from '../globalContext/GlobalContext';
 
-function LonIn() {
+function LogIn() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const navigate = useNavigate();
+    const { loginUser } = useContext(GlobalVar);
     const login = async (e) => {
-        e.preventDefault();
-        const response = await axios.post("https://backend-8b0tk9i1w-deepak-kumars-projects-e6b882e9.vercel.app/api/auth/login", formData)
-        console.log(response)
-        if(response.status == 200) {
-            toast.success("account created successfully")
-            setTimeout(() => {
-                navigate(-1)
-            }, 1000)
+        try {
+            e.preventDefault();
+            const response = await axios.post("https://backend-nzyc96caw-deepak-kumars-projects-e6b882e9.vercel.app/api/auth/login", formData)
+            if (response.status === 200) {
+                const token = response?.data?.token || response?.data?.data?.token || '';
+                if (token) {
+                    loginUser(token);
+                }
+                toast.success("Account logged in successfully")
+                setTimeout(() => {
+                    navigate(-1)
+                }, 1000)
+            }
+            setFormData({ email: '', password: '' });
+        } catch (error) {
+            toast.error(error?.response?.data?.message || 'Login failed')
         }
     }
     return (
@@ -23,7 +33,7 @@ function LonIn() {
                 <form onSubmit={login}>
                     <label htmlFor="email">Email</label>
                     <input
-                        type="email" 
+                        type="email"
                         id="email"
                         placeholder="Enter your email"
                         value={formData.email}
@@ -49,4 +59,4 @@ function LonIn() {
     );
 }
 
-export default LonIn
+export default LogIn

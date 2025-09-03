@@ -1,6 +1,6 @@
 import { RouterProvider } from 'react-router-dom'
 import routing from './routing/GlobalRouting'
-import GlobalContext from './globalContext/GlobalContext'
+import GlobalContext, { GlobalVar } from './globalContext/GlobalContext'
 import { Toaster } from 'react-hot-toast'
 
 function App() {

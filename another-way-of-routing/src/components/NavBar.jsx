@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { GlobalVar } from '../globalContext/GlobalContext'
 
 function NavBar() {
+    const { isAuthenticated, logoutUser, setCartPanel, cartPanel } = useContext(GlobalVar);
     return (
         <nav className="navbar">
             <div className="navbar-logo">
@@ -17,8 +19,18 @@ function NavBar() {
                 <li><Link to="/home/contact">Contact Us</Link></li>
             </ul>
             <div className="btn">
-                <Link to="/login">Log in</Link>
-                <Link to="/signup">Sign up</Link>
+                {isAuthenticated && (
+                    <div>
+                        <Link to="/cart">Cart</Link>
+                        <button onClick={logoutUser}>Logout</button>
+                    </div>
+                )}
+                {!isAuthenticated && (
+                    <>
+                        <Link to="/login">Log in</Link>
+                        <Link to="/signup">Sign up</Link>
+                    </>
+                )}
             </div>
         </nav>
     )

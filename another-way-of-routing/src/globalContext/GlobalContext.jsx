@@ -10,6 +10,7 @@ function GlobalContext({ children }) {
     const [cart, setCart] = useState([]);
     const [credentials, setCredentials] = useState([]);
     const [userId, setUserId] = useState(null);
+    const [reload, setReload] = useState(false);
     const [token, setToken] = useState(() => {
         try {
             return localStorage.getItem('token') || '';
@@ -17,6 +18,16 @@ function GlobalContext({ children }) {
             return '';
         }
     });
+
+    const addToCart = async(item) => {
+        try {
+            const addItem = await axios.post("https://backend-nzyc96caw-deepak-kumars-projects-e6b882e9.vercel.app/api/cart/add", {courseId: item, userId: userId})
+            console.log(addItem)
+            setReload(!reload)
+        } catch (error) {
+            console.error("Error adding item to cart:", error);
+        }
+    }
 
     useEffect(() => {
         if(token) {
@@ -49,7 +60,7 @@ function GlobalContext({ children }) {
         };
 
         fetchData();
-    }, [token]);
+    }, [token, reload]);
 
     const loginUser = (newToken) => {
         try {
@@ -69,7 +80,7 @@ function GlobalContext({ children }) {
     const isAuthenticated = Boolean(token);
 
     return (
-        <GlobalVar.Provider value={{ courses, cart, credentials, loading, setCart, token, isAuthenticated, loginUser, logoutUser, setCartPanel, cartPanel }}>
+        <GlobalVar.Provider value={{ courses, cart, credentials, loading, setCart, token, isAuthenticated, loginUser, logoutUser, setCartPanel, cartPanel, addToCart }}>
             {children}
         </GlobalVar.Provider>
     )

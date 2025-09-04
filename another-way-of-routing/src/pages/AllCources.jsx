@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { GlobalVar } from '../globalContext/GlobalContext';
 
 function AllCources() {
-    const { courses, loading } = useContext(GlobalVar);
+    const { courses, loading, addToCart } = useContext(GlobalVar);
     if (loading) return <h3>Loading...</h3>;
 
     return (
@@ -17,7 +17,7 @@ function AllCources() {
                     <p> <b>duration:</b> {ele.duration}</p>
                     <div className="btn">
                         <button>View Course</button>
-                        <button>Enroll</button>
+                        <button onClick={() => addToCart(ele._id)}>Enroll</button>
                     </div>
                 </div>
             ))}

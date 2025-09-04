@@ -9,16 +9,54 @@
     --border: #e5e7eb;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0b1220;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --brand: #fb923c;
-        --brand-strong: #f97316;
-        --surface: #0f172a;
-        --border: #1f2937;
-    }
+/* Cart page (Cart.jsx) */
+.cartSection {
+    width: 100%;
+    min-height: 20rem;
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    background: transparent;
+}
+
+.cartSection .card {
+    width: 28%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(2, 36, 77, 0.06);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cartSection .card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.cartSection .card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.cartSection .card p b {
+    color: var(--text);
+}
+
+@media (max-width: 1024px) {
+    .cartSection .card { width: 42%; }
+}
+
+@media (max-width: 768px) {
+    .cartSection { padding: 16px; }
+    .cartSection .card { width: 100%; }
 }
 * {
     margin: 0;
@@ -205,7 +243,7 @@ nav .btn button { border: 0; }
     min-height: 60vh;
     padding: 20px;
     background-color: #fdfdfd;
-    /* Light off-white, QSpiders-friendly */
+    /* Light off-white */
 }
 
 /* The login card styles */
@@ -302,14 +340,12 @@ nav .btn button { border: 0; }
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* border: 1px solid; */
 }
 
 .courses .course {
     width: 100%;
     height: 100%;
     display: flex;
-    /* border: 1px solid; */
 }
 
 .courses .course .courseList {
